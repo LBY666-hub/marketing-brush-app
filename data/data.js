@@ -1,0 +1,1 @@
+window.DATA = [PAPER1, PAPER2, PAPER3];
