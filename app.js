@@ -54,7 +54,6 @@ function isCorrect(type, q, sel){
 var view = document.getElementById('view');
 var TAB_BTN = document.querySelectorAll('nav.tabs button');
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function papersTitle(pi){ return PAPERS[pi] ? PAPERS[pi].title : ''; }
 
 /* 当前练习会话 */
 var session = null; // {pi, items, pos, mode}
@@ -98,7 +97,7 @@ function renderHome(){
   var pi = STATE.paperIndex||0; pi=Math.min(pi, PAPERS.length-1);
   var done = countDone(pi), total = buildItems(pi).length, acc = accuracy(pi);
   var paperBtns = PAPERS.map(function(p,i){
-    return '<button class="btn"'+(i===pi?' primary':'')+' data-paper="'+i+'">'+esc(p.title)+'</button>';
+    return '<button class="btn'+(i===pi?' primary':'')+'" data-paper="'+i+'">'+esc(p.title)+'</button>';
   }).join('');
   var modeBtns = MODES.map(function(m){
     return '<button class="btn" data-mode="'+m.id+'">'+esc(m.name)+'<div class="muted" style="font-size:11px">'+esc(m.desc)+'</div></button>';
