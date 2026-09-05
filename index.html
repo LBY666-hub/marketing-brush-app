@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0f1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="市场营销刷题 — 3套试卷，含答案解析与知识点详解，离线可用，记录本地存储">
+<title>市场营销刷题</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>市场营销刷题</h1>
+    <div class="hright">
+      <span class="hint" id="topHint">3套试卷 · 离线可用</span>
+      <button id="themeBtn" class="theme-btn" title="切换深色/浅色">🌙</button>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <nav class="tabs">
+    <button data-tab="home" class="on">刷题</button>
+    <button data-tab="review">错题本</button>
+    <button data-tab="stat">统计</button>
+    <button data-tab="more">更多</button>
+  </nav>
+</div>
+
+<!-- 数据层 -->
+<script src="data/paper1.js"></script>
+<script src="data/paper2.js"></script>
+<script src="data/paper3.js"></script>
+<script src="data/data.js"></script>
+<!-- 应用逻辑 -->
+<script src="app.js"></script>
+<script>
+  // 注册 Service Worker（离线能力），仅在实际服务器上生效
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  }
+</script>
+</body>
+</html>

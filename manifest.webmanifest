@@ -1,0 +1,15 @@
+{
+  "name": "市场营销刷题",
+  "short_name": "营销刷题",
+  "description": "市场营销刷题：3套试卷，含答案解析与知识点详解，离线可用，记录本地存储",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1220",
+  "theme_color": "#0f1220",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
