@@ -211,13 +211,9 @@ function selectOpt(it, letter, o){
     setSel(it, letter);
     return;
   }
-  // multi / case: 允许多选
+  // multi / case: 允许多选，只切换被点击的那个选项
   var box=view.querySelector('#opts');
-  box.querySelectorAll('.opt').forEach(function(x){
-    if(!x.classList.contains('right') && !x.classList.contains('wrong')){
-      x.classList.toggle('sel');
-    }
-  });
+  if(o) o.classList.toggle('sel');
   var sel = box.querySelectorAll('.opt.sel');
   var letters = Array.prototype.map.call(sel, function(x){ return x.querySelector('.mark').textContent; }).sort().join('');
   currentSelection = {key:it.key, sel:letters, type:it.type};
